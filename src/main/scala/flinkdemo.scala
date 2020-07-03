@@ -285,7 +285,6 @@ object test01{
 
 
 object wordcount{
-
   def main(args: Array[String]): Unit = {
     val environment: ExecutionEnvironment = ExecutionEnvironment.getExecutionEnvironment
     val unit: DataSet[String] = environment.readTextFile("C:\\Users\\Administrator\\Desktop\\wc.txt")

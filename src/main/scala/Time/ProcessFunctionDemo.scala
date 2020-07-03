@@ -16,7 +16,7 @@ object ProcessFunctionDemo {
 
     val environment: StreamExecutionEnvironment = StreamExecutionEnvironment.getExecutionEnvironment
     environment.setStreamTimeCharacteristic(TimeCharacteristic.ProcessingTime)
-    val unit: DataStream[String] = environment.socketTextStream("192.168.2.129",9999)
+    val unit: DataStream[String] = environment.socketTextStream("127.0.0.1",9999)
     unit.map(line =>{
       val strings: Array[String] = line.split(",")
       (strings(0),strings(1).trim.toInt)

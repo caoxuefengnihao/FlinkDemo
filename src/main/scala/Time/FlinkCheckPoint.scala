@@ -18,7 +18,7 @@ object FlinkCheckPoint {
   def main(args: Array[String]): Unit = {
     val environment: StreamExecutionEnvironment = StreamExecutionEnvironment.getExecutionEnvironment
     //在这设置checkpoint相关参数
-    environment.setStateBackend(new FsStateBackend("file:///C:\\Users\\Administrator\\Desktop\\flinkcheckpoint"))
+    environment.setStateBackend(new FsStateBackend("file:///C:\\Users\\101-01-0192\\Desktop\\flinkcheckpoint"))
     environment.getCheckpointConfig.setCheckpointingMode(CheckpointingMode.EXACTLY_ONCE)
     environment.getCheckpointConfig.setCheckpointTimeout(60000)
     environment.enableCheckpointing(2000)

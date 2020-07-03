@@ -15,7 +15,7 @@ object ProcessTimeDemo {
       * or the program must inject a Timestamp Assigner & Watermark Generator after the sources.
       */
     environment.setStreamTimeCharacteristic(TimeCharacteristic.ProcessingTime)
-    val unit: DataStream[String] = environment.socketTextStream("192.168.2.129",9999)
+    val unit: DataStream[String] = environment.socketTextStream("127.0.0.1",9999)
     val value: DataStream[(Long, String, String, Double)] = unit.map(x => {
       val strings: Array[String] = x.split(",")
       (strings(0).trim.toLong, strings(1), strings(2), strings(3).trim.toDouble)
